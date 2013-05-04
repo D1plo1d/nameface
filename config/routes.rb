@@ -3,6 +3,8 @@ Nameface::Application.routes.draw do
 resources :users, :except => [:destroy]
 resource :session, :only => [:new, :create, :destroy]
 
+post '/events' => "events#create"
+
 resources :events, :only => [:index, :show] do 
   collection do 
     get 'add_event_to_user'
