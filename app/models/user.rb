@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  # authenticates_with_sorcery!
-  # attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :cardview, :avatar
+  authenticates_with_sorcery!
+  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :cardview, :avatar
   
   has_attached_file :avatar, :styles => {:asd => "250x250px", :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"  
   # validates :first_name, :presence => true
